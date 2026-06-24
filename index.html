@@ -9,8 +9,9 @@
 <meta property="og:title" content="cinematic-3d-battle-engine: turn any battle into a 3D documentary" />
 <meta property="og:description" content="Self-playing 3D battle documentaries on real-scale terrain. Three.js, no build, no backend, no API keys. Fork the template to your own battle." />
 <!-- BRANDING below describes the bundled example battle (Blue Force vs Red Force). When you fork: replace the
-     title/description/og tags and the #disclaimer with your own battle's; set og:url to your deployment URL. The #credit
-     names this template's author (Keith Li); keep it as attribution. Removing it is your own manual choice. -->
+     title/description/og tags and the #disclaimer with your own battle's; set og:url to your deployment URL. The credit
+     (footer #credit + the upper-left #engine-credit, below the © notice) names the engine and its author (Keith Li);
+     keep it as attribution by default. Removing it is your own manual choice. -->
 <meta property="og:url" content="https://keithligh.github.io/cinematic-3d-battle-engine/" />
 <meta property="og:image" content="https://keithligh.github.io/cinematic-3d-battle-engine/docs/og.jpg" />
 <meta property="og:image:width" content="1200" />
@@ -69,14 +70,13 @@
   #notes-btn:hover,#lang-btn:hover,#music-btn:hover{background:rgba(216,192,138,.2)}
   #lang-btn,#music-btn{margin-left:6px}
   #music-btn.off{opacity:.5}
-  /* ---------- credits ---------- */
-  #title .credit{margin-top:8px;font-family:var(--mono);font-size:9px;letter-spacing:.2px;color:var(--ink-dim);line-height:1.45;max-width:230px}
-  #title .credit a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(216,192,138,.45)}
-  #title .credit a:hover{color:#fff}
-  #credit{position:fixed;z-index:6;left:50%;bottom:5px;transform:translateX(-50%);max-width:94vw;text-align:center;
+  /* ---------- credits (duo: engine + author; the footer #credit and the upper-left #engine-credit below the © notice) ---------- */
+  #engine-credit{font-family:var(--mono);font-size:9px;letter-spacing:.2px;line-height:1.5;max-width:230px;
+    color:rgba(216,222,232,.72);text-shadow:0 1px 2px #000,0 0 5px #000;pointer-events:none}
+  #credit{position:fixed;z-index:6;left:50%;bottom:18px;transform:translateX(-50%);max-width:94vw;text-align:center;line-height:1.5;
     font-family:var(--mono);font-size:10px;letter-spacing:.3px;color:rgba(216,222,232,.66);text-shadow:0 1px 2px #000,0 0 5px #000;pointer-events:none}
-  #credit a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(216,192,138,.55);pointer-events:auto}
-  #credit a:hover{color:#fff}
+  #credit a,#engine-credit a{color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(216,192,138,.55);pointer-events:auto}
+  #credit a:hover,#engine-credit a:hover{color:#fff}
 
   /* ---------- tiny faction key ---------- */
   #key{position:fixed;z-index:5;top:16px;right:18px;padding:8px 12px;font-size:11px}
@@ -178,7 +178,7 @@
     #title h1{font-size:17px} #caption .ttl{font-size:22px} #caption .narr{font-size:13px}
     #key{font-size:10px;top:10px;right:10px;padding:6px 9px}
     #caption .narr .ne{font-size:10.5px}
-    #credit{font-size:8px;bottom:3px} #title .credit{font-size:8px}
+    #credit{font-size:8px;bottom:12px} #engine-credit{font-size:8px}
   }
   /* iPhone-class phones (SE 375 → Pro Max 430): shrink the top row so #title & #key never collide */
   @media (max-width:440px){
@@ -186,7 +186,7 @@
     #title h1{font-size:15px;letter-spacing:1.5px}
     #title .sub{font-size:7px;letter-spacing:1px;margin-top:2px}
     #notes-btn,#lang-btn{font-size:8px;margin-top:5px}
-    #title .credit{font-size:7px;margin-top:5px;max-width:165px;line-height:1.35}
+    #engine-credit{font-size:7px;max-width:165px;line-height:1.4}
     #key{font-size:8px;top:10px;right:8px;padding:5px 6px}
     #resume{top:112px}   /* free-look prompt drops below the title/legend row so it never overlaps them */
   }
@@ -204,9 +204,12 @@
       <button id="notes-btn"></button>
       <button id="lang-btn" aria-label="Toggle narration language"></button>
       <button id="music-btn" class="off" title="Music" aria-label="Background music">🔇</button>
-      <div class="credit">Built with ❤️ by Keith Li · <a href="https://www.linkedin.com/in/keithlihk/" target="_blank" rel="noopener">Follow on LinkedIn</a></div>
     </div>
     <div id="disclaimer"></div>
+    <div id="engine-credit" lang="en">
+      <div>Built with <a href="https://github.com/keithligh/cinematic-3d-battle-engine" target="_blank" rel="noopener">cinematic-3d-battle-engine</a></div>
+      <div>Created by Keith Li · <a href="https://www.linkedin.com/in/keithlihk/" target="_blank" rel="noopener">Follow on LinkedIn</a></div>
+    </div>
     <div id="hint" class="panel"></div>
   </div>
 
@@ -221,7 +224,10 @@
     <div class="meta" id="cap-meta"></div>
   </div>
 
-  <div id="credit" lang="en">Built by Keith Li · <a href="https://www.linkedin.com/in/keithlihk/" target="_blank" rel="noopener">LinkedIn</a></div>
+  <div id="credit" lang="en">
+    <div>Built with <a href="https://github.com/keithligh/cinematic-3d-battle-engine" target="_blank" rel="noopener">cinematic-3d-battle-engine</a></div>
+    <div>Created by Keith Li · <a href="https://www.linkedin.com/in/keithlihk/" target="_blank" rel="noopener">Follow on LinkedIn</a></div>
+  </div>
 
   <!-- minimal transport (auto-hides) -->
   <div id="controls">
