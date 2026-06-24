@@ -11,13 +11,16 @@ Read PLAYBOOK.md and AGENTS.md first. Edit only the battle layer (data.js, flags
 meta, and the map bounding box); never touch the engine modules.
 
 Research first and cite real sources, with no fabrication: the date window, the opposing sides with their forces and
-commanders, the real geography (named places with lng/lat), and the sequence of events.
+commanders, the real geography (named places with lng/lat), and the sequence of events. If the battle is fictional
+rather than historical, mark it as fictional in notes and keep it true to its source material (fictional historical
+accuracy); never present invention as real history.
 
 Set the map bounding box (meta.geo) over the action, then fetch the terrain and imagery tiles
 (node tools/fetch_tiles.mjs). Author data.js: the forces, each unit's dated movement track, the front lines, the
 storyboard of camera shots, the bilingual narration, and each side's period-correct flag (the real flag for the year,
 never a prohibited symbol). Validate with node tools/validate.mjs after every pass and watch it in the browser
-(node tools/serve.js). Keep the present-day-imagery disclaimer.
+(node tools/serve.js). Keep the present-day-imagery disclaimer. Leave the engine and author credit visible (the footer
+and upper-left credits) as good will; add your own name alongside it rather than removing it.
 ```
 
 For reference, the [Battle of Hong Kong](https://github.com/keithligh/battle-of-hong-kong-1941) documentary was built

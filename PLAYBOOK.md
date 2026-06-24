@@ -64,6 +64,7 @@ the day/night and weather all carry over.
 
 ## The rules learned the hard way
 - **The data cannot be auto-generated.** Research it, cross-check it, cite it. Auto-generated history is fabrication, which turns the piece into AI slop. This discipline is what makes it credible.
+- **Fictional battles are welcome, if honest.** A fiction does not need real sources, but it must be MARKED fictional in `notes` (the example uses `notes.sources:"FICTIONAL DEMONSTRATION SCENARIO"`) and kept true to its own source material (a novel, a game, an alternate-history premise, its own canon). That is fictional historical accuracy: plausible and internally consistent, never invention dressed up as real history. See AGENTS.md.
 - **Anachronism discipline.** Period-correct flags and forces. If you use present-day imagery, disclose it honestly (the original states "geography is present-day; the 1941 coastline was narrower").
 - **Relative paths only** (no leading `/`, no hardcoded domain). The app must run from any folder or sub-path.
 - **ES-module MIME.** On a static host, `.js` must be served as a JavaScript MIME type or the module will not load. GitHub Pages does this automatically; some hosts need an `.htaccess` `AddType application/javascript .js`.
@@ -72,6 +73,7 @@ the day/night and weather all carry over.
 ## Credibility (do not look like a bot or a careless dev)
 - **No em-dashes** (`—`) in any prose. It reads as AI-generated text. Use periods, colons, commas. (The Chinese dash `——` is correct in Chinese text and stays.)
 - **AI is a tool, not a contributor.** Keep the git history authored by you, with no `Co-Authored-By` trailers. A "built with [tool]" note is fine (it is like "built with my laptop"); listing the tool as a contributor is not.
+- **Honour the engine credit (good will).** The movie ships a small credit to the engine and its author (`#credit` + `#engine-credit`). The licence lets you remove it; we ask that you keep it visible and add your own name alongside it. The engine is free and open, and leaving the credit is how the favour is returned. See AGENTS.md.
 - Do not leak build/process names in `.gitignore` or comments.
 
 ## Capturing real screenshots / GIFs

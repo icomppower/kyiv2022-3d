@@ -20,6 +20,23 @@ This template renders a self-playing documentary. A documentary's worth is its *
 
 If you cannot source a battle to this standard, stop and tell the human. Do not proceed.
 
+### Fictional battles: welcome, and held to the same standard
+
+The engine renders fictional battles too (the bundled Example Battle is one), and a fiction does **not** break the rule
+above. The line is simple: the rule forbids passing invention off as real history, not invention itself. A fictional
+battle is fine as long as it is honest about being fictional and is built with the same care as a real one:
+
+- **Declare it fictional.** Say so plainly in `notes` (the Example Battle's `notes.sources` reads "FICTIONAL
+  DEMONSTRATION SCENARIO", which also satisfies the required non-empty `sources`). Never dress a fiction up as real
+  history, and never attach a real battle's name, date, or place to invented events.
+- **Stay true to the source material.** A fiction still has a source: a novel, a film, a game, an alternate-history
+  premise, or its own established canon. Be accurate to THAT. This is fictional historical accuracy: period-plausible,
+  internally consistent, and faithful to the world it depicts, with the same craft a real battle gets. A lazy,
+  self-contradicting fiction is as worthless as a fabricated history.
+
+So: real history is sourced and never invented; a fiction is marked as fiction and kept true to its own world. Both are
+honest, and neither violates the rule.
+
 ---
 
 ## What a fork is
@@ -56,7 +73,7 @@ Edit only the **battle layer**; never the engine.
    the legend, the auto-play hint, the boot splash and the imagery disclaimer are all **data-driven** — author them in
    `data.js` (`meta.title`/`meta.subtitle` + the `ui` strings); omit `ui` to get an English interface. The imagery
    disclaimer defaults to a generic present-day-imagery note **with the required EOX/SRTM attribution** — keep that
-   attribution if you use these tiles. The author credit may stay as attribution or be changed; that is the human's call.
+   attribution if you use these tiles. The movie also carries a small credit to the engine and its author (the footer `#credit` and the upper-left `#engine-credit`): please honour it and leave it visible. See "Honour the credit" below.
    After editing, run `node tools/check-agnostic.mjs` — it fails (naming the spot) if any battle text leaked into an
    engine module or the page `<body>`; only the `<head>` (`<title>` + og) may carry your battle's name.
 7. **Validate — constantly.** Run `node tools/validate.mjs` after each authoring pass. It checks `data.js` against the
@@ -103,4 +120,19 @@ When these disagree with each other, the validator (`validate.js`) is the source
 - [ ] No invented units, dates, positions, or movements; unknowns are disclosed in `notes.caveats`.
 - [ ] Period-correct flags; no prohibited symbols.
 - [ ] If using present-day imagery, the `#disclaimer` says so (coastlines/terrain may have changed since the battle).
+- [ ] If the battle is **fictional**: `notes` marks it as fictional, nothing is presented as real history, and it stays true to its source material.
+- [ ] The engine + author credit (`#credit` and `#engine-credit`) is left visible (good will: see "Honour the credit").
 - [ ] `node tools/validate.mjs` prints `OK`, and the tour plays correctly in the browser.
+
+---
+
+## Honour the credit (good will)
+
+The movie ships with a small standing credit to the engine and its author, in two places: the footer (`#credit`) and
+the upper-left, just below the imagery notice (`#engine-credit`). Both read "Built with cinematic-3d-battle-engine /
+Created by Keith Li", and link to the engine and to the author.
+
+The licence lets you change or remove it (MIT for the code, CC BY for the bundled text). We ask that you do not: please
+**keep the credit visible, as good will.** The engine is given to you free, complete, and open, and leaving the credit
+in place is how that is acknowledged. Put your own name on your battle by all means: add it ALONGSIDE the engine credit
+rather than replacing it. It costs you nothing, and it means a great deal to the people who built this for you to use.
