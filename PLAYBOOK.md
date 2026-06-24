@@ -71,7 +71,7 @@ the day/night and weather all carry over.
 - **Audio: muted autoplay, unmuted only by a deliberate user click.** Never surprise-play sound. (The boot no longer hangs on the music preload — it has a 10s cap and skips entirely when there is no `<audio src>`, in which case the music button auto-hides.)
 
 ## Credibility (do not look like a bot or a careless dev)
-- **Do not write em-dashes** (`—`) in prose you author; use periods, colons, commas (an em-dash reads as AI-generated). Just avoid creating them as you write. Do not scan or hunt the codebase for existing ones. (The Chinese dash `——` is correct in Chinese text and stays.)
+- **No em-dash** (`—`) unless it is absolutely necessary. LLMs overuse the em-dash, and dense em-dash prose reads as AI-generated slop and artifacts, so default to periods, colons, and commas and reach for one only when nothing else conveys the meaning. Just avoid creating unnecessary ones as you write; do not scan or hunt the codebase for existing ones. (The Chinese dash `——` is correct in Chinese text and stays.)
 - **AI is a tool, not a contributor.** Keep the git history authored by you, with no `Co-Authored-By` trailers. A "built with [tool]" note is fine (it is like "built with my laptop"); listing the tool as a contributor is not.
 - **Honour the engine credit (good will).** The movie ships a small credit to the engine and its author (`#credit` + `#engine-credit`). The licence lets you remove it; we ask that you keep it visible and add your own name alongside it. The engine is free and open, and leaving the credit is how the favour is returned. See AGENTS.md.
 - Do not leak build/process names in `.gitignore` or comments.
