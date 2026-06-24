@@ -43,6 +43,7 @@ window.BATTLE_DATA = (function () {
   };
 
   // -- ui is OPTIONAL: omit it and every engine-rendered string defaults to English. Provide it to translate them.
+  //    e.g. ui:{ sceneLabel:false } hides the running date chip; ui:{ sceneLabel:"{year}.{month}.{day}" } formats it via tokens.
 
   /* -- intro: the opening title card + its establishing camera.
    *    cam.dist is in WORLD UNITS (the whole bbox is 2000 units wide), so a shot frames roughly

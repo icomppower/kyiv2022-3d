@@ -111,12 +111,18 @@ export const Director = {
 
 /* ===================== MINIMAL UI (no control panel) ============= */
 export function updatePlayBtn(){ $("play").textContent = Director.mode==="outro" ? "↻" : (Director.playing?"⏸":"▶"); }
+function sceneLabel(){   // the running time chip. Default: year.month.day (the day taken from the clock). A fork may set ui.sceneLabel to false (hide it) or to a string with {year}/{month}/{day} tokens (e.g. a static "U.C. 0079.11.30" for a non-calendar timeline; the per-shot dateLabel carries the real date).
+  const sl=D.ui.sceneLabel, mm=String(D.meta.month).padStart(2,"0"), dd=String(Math.min(D.meta.lastDay,Math.floor(Clock.day))).padStart(2,"0");
+  if(sl===false) return "";
+  if(typeof sl==="string") return sl.replace(/\{year\}/g,D.meta.year).replace(/\{month\}/g,mm).replace(/\{day\}/g,dd);
+  return `${D.meta.year}.${mm}.${dd}`;
+}
 function updateProgress(){ const N=Director.shots.length; let f=0;
   if(Director.mode==="play"){ const sh=Director.shots[Director.i]; f=(Director.i+clamp(Director.t/(CFG.TWEEN+sh.hold),0,1))/N; }
   else if(Director.mode==="outro") f=1;
   $("prog").firstChild.style.width=(f*100)+"%";
   $("scene-label").textContent = Director.mode==="outro" ? D.ui.endLabel
-    : (Director.mode==="play" ? `${D.meta.year}.${String(D.meta.month).padStart(2,"0")}.${String(Math.min(D.meta.lastDay,Math.floor(Clock.day))).padStart(2,"0")}` : ""); }
+    : (Director.mode==="play" ? sceneLabel() : ""); }
 /* ---- buildChrome(): paint the static HUD chrome from data, so a fork reskins by editing data ONLY.
  *  index.html carries no battle text (only <title>/og); every visible string here has ONE source:
  *  D.meta (battle name) · FAC (faction names + the --fac-<key> swatch injectBattleStyles emits) ·

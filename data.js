@@ -28,10 +28,14 @@ window.BATTLE_DATA = (function () {
    *    meta.geo is the single bbox source (tools/fetch_tiles reads it). Z is the tile zoom. */
   const meta = {
     geo:{ minLng:14.58, maxLng:14.72, minLat:40.61, maxLat:40.72, Z:13 },   // a real coastal mountain front: sea to the south, ridges inland
-    dayMin:1, dayMax:2.4, year:0, month:0, lastDay:2,                       // clock window; year:0 keeps the date label generic for a fictional scenario
+    dayMin:1, dayMax:2.4, year:0, month:0, lastDay:2,                       // clock window (a fictional battle, so the running date chip is hidden via ui.sceneLabel below rather than shown as a fake calendar date)
     title:"Example Battle", subtitle:"A fictional coastal assault, built to show the engine",
     // OPTIONAL theme:{ sky:{...}, sea, sun:{...}, grade:{...} } restyles the look (see PLAYBOOK.md); omitted here to use the engine defaults.
   };
+
+  /* -- ui: only the scene-label is customised here; every other interface string uses the engine's English DEFAULT_UI.
+   *    ui.sceneLabel: false hides the running date chip; a string with {year}/{month}/{day} tokens formats it instead. */
+  const ui = { sceneLabel:false };   // fictional battle: hide the calendar chip (the per-shot dateLabels carry the relative day)
 
   /* -- intro: the opening title card + its establishing camera. ----------------- */
   const intro = { title_zh:"Example Battle", title_en:"Example Battle",
@@ -180,5 +184,5 @@ window.BATTLE_DATA = (function () {
     sources:"FICTIONAL DEMONSTRATION SCENARIO, no historical sources (none exist; it is invented). Real battles you build MUST cite real sources here.",
   };
 
-  return { meta, factions, intro, outro, flagLegend, geography, units, arrows, fronts, weather, hotspots, storyboard, notes };
+  return { meta, ui, factions, intro, outro, flagLegend, geography, units, arrows, fronts, weather, hotspots, storyboard, notes };
 })();
