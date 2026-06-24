@@ -66,8 +66,9 @@ Edit only the **battle layer**; never the engine.
    `meta.fonts` and `meta.dir:"rtl"` for non-Latin or right-to-left), `_en` = the **secondary** language (usually
    English). Units move along their `track` keyframes `{d,lng,lat,s,st}` — there is no flat position/strength field.
 5. **Author `flags.js`.** Copy `flags.example.js` → `flags.js` — it ships reusable canvas primitives (`bands`, `disc`,
-   `star`) and two worked example flags. Compose each faction's period-correct flag from the primitives; the studio
-   `flags.js` (the Hong Kong example) shows richer painters (the 1801 Union Flag, the 16-ray Rising Sun) for reference.
+   `star`) and two worked example flags. Compose each faction's period-correct flag from the primitives; for richer real-flag painters (a period Union Flag, a
+   16-ray Rising Sun, and more) see the Battle of Hong Kong repo's `flags.js` at
+   https://github.com/keithligh/battle-of-hong-kong-1941/blob/main/flags.js.
    Use the correct historical flag for the period (a 1941 ensign, not the modern flag), and never a prohibited symbol.
 6. **Edit `index.html`** — only the `<title>` and the `og:`/social meta (the page's head metadata). The on-screen title,
    the legend, the auto-play hint, the boot splash and the imagery disclaimer are all **data-driven** — author them in
@@ -142,3 +143,12 @@ The licence lets you change or remove it (MIT for the code, CC BY for the bundle
 **keep the credit visible, as good will.** The engine is given to you free, complete, and open, and leaving the credit
 in place is how that is acknowledged. Put your own name on your battle by all means: add it ALONGSIDE the engine credit
 rather than replacing it. It costs you nothing, and it means a great deal to the people who built this for you to use.
+
+---
+
+## When the fork is a finished single-battle repo
+
+The engine ships fork-scaffolding so an AI can build your battle: `AGENTS.md`, `PLAYBOOK.md`, `data.example.js`, and
+`flags.example.js`. A finished single-battle showcase does not need them: once your battle is done, delete those four
+files from your battle repo (the published showcases do). `PROMPT.md` is optional: keep it to show the brief your
+battle grew from, or remove it. Keep `LICENSE`, `THIRD_PARTY_NOTICES.md`, and your own `README.md`.

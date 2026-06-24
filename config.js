@@ -96,7 +96,7 @@ const FONTS = { ...DEFAULT_FONTS, ...(D.meta.fonts||{}) };
 
 /* ========================= CONFIG ================================== */
 export const CFG = {
-  GEO: D.meta.geo,      // the battle's map box + zoom (from data.js; == tools/fetch_tiles.ps1)
+  GEO: D.meta.geo,      // the battle's map box + zoom (from data.js; == tools/fetch_tiles.mjs)
   TARGET_UNITS: 2000,   // world width of the map (height derived → to scale)
   VEXAG: 2.0,           // vertical exaggeration (Y only; XZ stays true to scale). DEFAULT before tiles; terrain.js AUTO-DERIVES
                         // it from the real relief so any-size theatre reads with sane relief (flat → more, alpine → less):
