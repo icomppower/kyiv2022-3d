@@ -181,6 +181,11 @@ window.BATTLE_DATA = (function () {
       narration_zh:"By nightfall Blue Force is ashore and into the hills, the coast secured.",
       narration_en:"By nightfall Blue Force is ashore and into the hills, the coast secured.",
       side:"blue", focus:["blue_marines","blue_armour","blue_rifles"] },
+    { day:2, hold:13, cam:{lng:14.652, lat:40.680, dist:1150, az:200, el:46, orbit:0.5},
+      title_zh:"Combined Arms", title_en:"Combined Arms", dateLabel:"DAY 2",
+      narration_zh:"Each arm reads as its own shape: the swept aircraft aloft, the artillery gun, and the infantry wedge.",
+      narration_en:"Each arm reads as its own shape: the swept aircraft aloft, the artillery gun, and the infantry wedge.",
+      side:"both", focus:["blue_air","red_battery"] },
   ];
 
   /* -- notes: REQUIRED. For a real battle, sources MUST cite your references; the
