@@ -3,22 +3,18 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>cinematic-3d-battle-engine: a self-playing 3D battle documentary</title>
-<meta name="description" content="An open-source engine that renders any battle as a self-playing 3D documentary on real-scale satellite and elevation terrain. This page shows the bundled example (Blue Force vs Red Force); fork it to your own battle with PLAYBOOK.md." />
+<title>The Kyiv Axis · 24–25 February 2022</title>
+<meta name="description" content="A neutral, sourced documentary map of the first 48 hours of the Russian invasion of Ukraine: the airmobile assault on Hostomel and the race for Kyiv, told over real 3D terrain." />
 <meta property="og:type" content="website" />
-<meta property="og:title" content="cinematic-3d-battle-engine: turn any battle into a 3D documentary" />
-<meta property="og:description" content="Self-playing 3D battle documentaries on real-scale terrain. Three.js, no build, no backend, no API keys. Fork the template to your own battle." />
-<!-- BRANDING below describes the bundled example battle (Blue Force vs Red Force). When you fork: replace the
-     title/description/og tags and the #disclaimer with your own battle's; set og:url to your deployment URL. The credit
-     (footer #credit + the upper-left #engine-credit, below the © notice) names the engine and its author (Keith Li);
-     keep it as attribution by default. Removing it is your own manual choice. -->
-<meta property="og:url" content="https://keithligh.github.io/cinematic-3d-battle-engine/" />
-<meta property="og:image" content="https://keithligh.github.io/cinematic-3d-battle-engine/docs/og.jpg" />
+<meta property="og:title" content="The Kyiv Axis · 24–25 February 2022" />
+<meta property="og:description" content="The airborne assault on Hostomel and the first 48 hours of the invasion, told over real 3D terrain. A neutral, sourced documentary reconstruction." />
+<meta property="og:url" content="https://icomppower.github.io/kyiv2022-3d/" />
+<meta property="og:image" content="https://icomppower.github.io/kyiv2022-3d/docs/og.jpg" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:image:alt" content="The cinematic-3d-battle-engine rendering a battle on real-scale terrain" />
+<meta property="og:image:alt" content="3D map of the Kyiv / Hostomel axis, 24-25 February 2022" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="https://keithligh.github.io/cinematic-3d-battle-engine/docs/og.jpg" />
+<meta name="twitter:image" content="https://icomppower.github.io/kyiv2022-3d/docs/og.jpg" />
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><rect width='16' height='16' fill='%2306080c'/></svg>" /><!-- the faction-coloured favicon is rebuilt from FAC by app.js at boot -->
 <style>
   :root{
@@ -190,6 +186,14 @@
     #hud-tl{max-width:48vw} #key{max-width:42vw;font-size:8px;top:10px;right:8px;padding:5px 6px}
     #resume{top:112px}   /* free-look prompt drops below the title/legend row so it never overlaps them */
   }
+
+  /* ---------- evidence tags (injected inline in narration_en HTML) --- */
+  .evtag{display:inline-block;font-size:.70em;font-weight:700;letter-spacing:.05em;
+    padding:1px 6px;border-radius:3px;margin-right:5px;vertical-align:middle;
+    font-family:var(--mono);line-height:1.5}
+  .evtag.verified{background:#1a7a3a;color:#e8ffe8}
+  .evtag.approx{background:#8a6010;color:#fff8e0}
+  .evtag.contested{background:#7a1a1a;color:#ffe8e8}
 </style>
 </head>
 <body>
